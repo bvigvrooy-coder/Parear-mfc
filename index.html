@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parear MFC</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --azul: #0A1A2F;
+            --laranja: #F28C28;
+            --cinza: #E8E8E8;
+            --branco: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cinza);
+            color: var(--azul);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--azul), #142b4a);
+            color: var(--branco);
+            padding: 40px 20px 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--laranja);
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            z-index: 100;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            margin: 4px 15px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: var(--laranja);
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: var(--branco);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .area-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .area-links .card {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .area-links a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--laranja);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .area-links a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: #c0392b;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .dashboard {
+            display: none;
+        }
+
+        .progress {
+            margin-top: 15px;
+        }
+
+        .bar {
+            width: 100%;
+            height: 12px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--laranja), #ffb45a);
+            border-radius: 10px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat {
+            flex: 1;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .stat h3 {
+            margin: 0;
+            font-size: 22px;
+            color: var(--azul);
+        }
+
+        .stat p {
+            margin: 4px 0 0;
+            font-size: 13px;
+        }
+
+        footer {
+            background-color: var(--azul);
+            color: var(--branco);
+            text-align: center;
+            padding: 16px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Parear MFC</h1>
+    <p>Preceptoria a distância em Medicina de Família e Comunidade</p>
+</header>
+
+<nav>
+    <a href="#quem-somos">Quem nós somos</a>
+    <a href="#metodologia">Metodologia</a>
+    <a href="#preceptor-inscricao">Inscreva-se como Preceptor</a>
+    <a href="#aluno-inscricao">Inscreva-se como Aluno</a>
+    <a href="#login">Login</a>
+    <a href="#dashboard-aluno">Área do Aluno</a>
+    <a href="#dashboard-preceptor">Área do Preceptor</a>
+    <a href="#faq">FAQ</a>
+</nav>
+
+<section id="quem-somos">
+    <div class="card">
+        <h2>Quem nós somos</h2>
+        <p>
+            O Parear MFC é um projeto de preceptoria a distância voltado para médicos residentes,
+            estudantes e profissionais interessados em aprimorar suas competências em Medicina de Família e Comunidade.
+        </p>
+    </div>
+</section>
+
+<section id="metodologia">
+    <div class="card">
+        <h2>Metodologia</h2>
+        <ul>
+            <li>Pareamento inteligente</li>
+            <li>Encontros virtuais</li>
+            <li>Portfólio reflexivo</li>
+        </ul>
+    </div>
+</section>
+
+<section id="preceptor-inscricao">
+    <div class="card">
+        <h2>Inscreva-se como Preceptor</h2>
+        <iframe 
+            src="https://docs.google.com/forms/d/e/SEU_FORMULARIO_PRECEPTOR/viewform?embedded=true"
+            width="100%" height="900" frameborder="0">Carregando…</iframe>
+    </div>
+</section>
+
+<section id="aluno-inscricao">
+    <div class="card">
+        <h2>Inscreva-se como Aluno</h2>
+        <iframe 
+            src="https://docs.google.com/forms/d/e/SEU_FORMULARIO_ALUNO/viewform?embedded=true"
+            width="100%" height="900" frameborder="0">Carregando…</iframe>
+    </div>
+</section>
+
+<section id="login">
+    <div class="card">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label>Tipo de acesso</label>
+            <select id="tipo">
+                <option value="aluno">Aluno</option>
+                <option value="preceptor">Preceptor</option>
+            </select>
+
+            <label>Usuário</label>
+            <input type="text" id="usuario">
+
+            <label>Senha</label>
+            <input type="password" id="senha">
+
+            <button type="submit">Entrar</button>
+
+            <div class="error" id="erroLogin" style="display:none;">
+                Usuário ou senha inválidos.
+            </div>
+        </form>
+    </div>
+</section>
+
+<section id="dashboard-aluno" class="dashboard">
+    <div class="card">
+        <h2>Área do Aluno</h2>
+        <p><strong>Aluno:</strong> Beatriz Santos</p>
+        <p><strong>Preceptor:</strong> Dr. João Silva</p>
+
+        <div class="progress">
+            <label>Progresso geral</label>
+            <div class="bar">
+                <div class="fill" style="width: 45%;"></div>
+            </div>
+        </div>
+
+        <h3>Próximo encontro</h3>
+        <p>12/10/2026 — 14h</p>
+
+        <h3>Ações rápidas</h3>
+        <button>Registrar reflexão</button>
+        <button>Ver histórico</button>
+        <button>Agenda completa</button>
+        <button>Materiais de estudo</button>
+    </div>
+</section>
+
+<section id="dashboard-preceptor" class="dashboard">
+    <div class="card">
+        <h2>Área do Preceptor</h2>
+        <p><strong>Preceptor:</strong> Dr. João Silva</p>
+
+        <div class="stats">
+            <div class="stat"><h3>5</h3><p>Alunos ativos</p></div>
+            <div class="stat"><h3>12</h3><p>Encontros realizados</p></div>
+            <div class="stat"><h3>18</h3><p>Reflexões avaliadas</p></div>
+        </div>
+
+        <h3>Ações rápidas</h3>
+        <button>Lista de alunos</button>
+        <button>Avaliar reflexões</button>
+        <button>Agenda completa</button>
+        <button>Materiais</button>
+    </div>
+</section>
+
+<section id="faq">
+    <div class="card">
+        <h2>FAQ</h2>
+        <p>Projeto gratuito.</p>
+        <p>Pareamento personalizado.</p>
+        <p>Certificado ao final.</p>
+    </div>
+</section>
+
+<footer>
+    <p>Parear MFC — Educação colaborativa em Medicina de Família e Comunidade</p>
+</footer>
+
+<script>
+    const form = document.getElementById('loginForm');
+    const erro = document.getElementById('erroLogin');
+    const dashAluno = document.getElementById('dashboard-aluno');
+    const dashPreceptor = document.getElementById('dashboard-preceptor');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const tipo = document.getElementById('tipo').value;
+        const usuario = document.getElementById('usuario').value.trim();
+        const senha = document.getElementById('senha').value.trim();
+
+        if (tipo === 'aluno' && usuario === 'aluno' && senha === '123') {
+            erro.style.display = 'none';
+            dashAluno.style.display = 'block';
+            dashPreceptor.style.display = 'none';
+            window.location.hash = '#dashboard-aluno';
+        } else if (tipo === 'preceptor' && usuario === 'preceptor' && senha === '123') {
+            erro.style.display = 'none';
+            dashAluno.style.display = 'none';
+            dashPreceptor.style.display = 'block';
+            window.location.hash = '#dashboard-preceptor';
+        } else {
+            erro.style.display = 'block';
+            dashAluno.style.display = 'none';
+            dashPreceptor.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
